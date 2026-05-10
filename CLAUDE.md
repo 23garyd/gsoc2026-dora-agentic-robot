@@ -11,7 +11,7 @@ orchestration.
 
 ## Mentor
 
-- handle: bobdingAI
+- handle: dorarobotics
 
 ## Proposal
 
@@ -31,6 +31,6 @@ Exact end-dates filled in from Google's published 2026 timeline.
 ## Workflow
 
 - Student forks this repo and opens PRs against `main`.
-- Mentor (bobdingAI) reviews and merges. No auto-merge.
+- Mentor (dorarobotics) reviews and merges. No auto-merge.
 - Weekly meeting notes live in GitHub Discussions, category `Weekly Sync`.
 - Per-meeting workflow: `/prep` → meeting → `/log` (run from this folder).
