@@ -1,0 +1,35 @@
+# Week 1 — UR5e MuJoCo simulation (sim only).
+#
+# Steps the physics on a 10 ms timer and publishes joint state. A downstream
+# node (added in later weeks) can drive `control_input` / `gripper_ctrl`.
+#
+# Run:
+#   bash scripts/fetch_ur5e_assets.sh        # one-time: fetch meshes
+#   dora up
+#   MUJOCO_HEADLESS=1 dora start dataflows/ur5e_sim.yml
+#   dora stop
+
+nodes:
+  - id: mujoco_sim
+    path: ../simulation/mujoco_node.py
+    inputs:
+      tick: dora/timer/millis/10
+      control_input: arm_commander/control_input
+      gripper_ctrl: arm_commander/gripper_ctrl
+    outputs:
+      - joint_positions
+      - joint_velocities
+      - sensor_data
+    env:
+      MODEL_NAME: ../simulation/models/ur5e_scene.xml
+      # Set MUJOCO_HEADLESS=1 on machines without a display server.
+
+  # Placeholder consumer so `joint_positions` has a sink and the inputs above
+  # resolve. Replace with the agent bridge / planner nodes in later weeks.
+  - id: arm_commander
+    path: dynamic
+    inputs:
+      joint_positions: mujoco_sim/joint_positions
+    outputs:
+      - control_input
+      - gripper_ctrl
