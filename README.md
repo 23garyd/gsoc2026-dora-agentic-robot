@@ -6,7 +6,8 @@ GSOC 2026 | Agentic DORA — agent-driven framework for intelligent robot contro
 
 ## Documentation
 
-Start here: **[docs/README.md](docs/README.md)**. Core guides —
+Start here: **[docs/final-submission.md](docs/final-submission.md)** (deliverables
+checklist + 3-command tour) and the **[docs index](docs/README.md)**. Core guides —
 [Architecture](docs/architecture.md) ·
 [Setup (5 min)](docs/setup.md) ·
 [Tool API reference](docs/tool-reference.md) ·
@@ -84,8 +85,8 @@ RUN_LIVE_LLM=1 OPENAI_API_KEY=sk-... pytest tests/test_live_llm.py -q  # opt-in:
 agent/           Agent loop, ToolRegistry, LLM providers + failover, dora bridge, robot tools (with replanning), skills
 simulation/      UR5e MuJoCo node, gripper + mission sources, pipeline stub, sim executor, RRT-Connect planner (runtime scene) + trajectory executor, UR5e planner config, forward kinematics + collision/self-collision, named poses, scene model
 skills/          SKILL.md domain knowledge injected into the agent's system prompt
-dataflows/       dora dataflow configs
-scripts/         asset fetch helper
-tests/           unit tests
-docs/            per-week deliverable notes
+dataflows/       dora dataflow configs (10)
+scripts/         asset fetch helper + demo GIF render (render_demo.py)
+tests/           ~200 unit tests + real-dataflow integration tests
+docs/            guides (architecture, setup, tool/skill/pipeline/extension) + per-week build log
 ```

@@ -14,6 +14,7 @@ from MuJoCo (`python scripts/render_demo.py`).*
 
 | Guide | What it covers |
 |-------|----------------|
+| **[final-submission.md](final-submission.md)** | The deliverables checklist (requirement → where it lives → how to run it), the 3-command tour, and verification status. Start here for an overview. |
 | **[architecture.md](architecture.md)** | How it fits together — the agent-as-source idea, the dataflow topology diagram, and inside the agent bridge. |
 | **[setup.md](setup.md)** | From clone to a running pick-and-place in under 5 minutes. Zero-dependency demos and the full simulator pipeline. |
 | **[tool-reference.md](tool-reference.md)** | Every agent tool: JSON schemas, examples, return shapes, and error handling. |
